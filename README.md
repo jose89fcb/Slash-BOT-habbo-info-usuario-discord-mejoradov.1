@@ -1,1 +1,1 @@
-# Slash-BOT-habbo-info-usuario-discord-mejoradov.1
+Abre al archivo de configuracion.ini y agrega el token en "AQUÍ EL TOKEN"
