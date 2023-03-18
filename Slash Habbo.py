@@ -395,9 +395,9 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
         await ctx.author.send(embed=embed)
 
 
-        await ctx.channel.send("Te acabo de enviar un mensaje privado")
+        await ctx.send("Te acabo de enviar un mensaje privado", hidden=True)
     except discord.errors.Forbidden:
-        await ctx.channel.send("No pudimos enviarte el mensaje privado, => click en ajustes de usuario => privacidad y seguridad => permitir mensajes directos...")
+        await ctx.send("No pudimos enviarte el mensaje privado, => click en ajustes de usuario => privacidad y seguridad => permitir mensajes directos...", hidden=True)
     except UnboundLocalError:
         Habbokeko=""
     
