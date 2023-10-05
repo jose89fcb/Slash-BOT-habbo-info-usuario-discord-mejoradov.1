@@ -231,8 +231,8 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
 
     try:
     
-     estado = response.json()["online"]
-     estado = (str(estado)).replace("True","Conectado✅").replace("False","desconectado❌")
+     #estado = response.json()["online"]
+     #estado = (str(estado)).replace("True","Conectado✅").replace("False","desconectado❌")
     
 
      totalxp = response.json()['totalExperience']
@@ -371,9 +371,43 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
         tiempotrans="No muestra!❌"
     
     
-
-
+    data = response.json()
+  
+   
+    try:
+          
+     estado = data["online"]
     
+   
+    
+       
+     es = {
+       "False":"Desconectad@ ❌",
+       "True":"En línea ✅"
+       
+
+
+    }
+    
+       
+     estado = es[str(estado)]
+    except KeyError:
+      
+       estado="❌" 
+
+    ####
+    bandera_dict = {
+    "es": "https://i.imgur.com/IplIfNP.png",
+    "com.br":  "https://i.imgur.com/YGQlPor.png",
+    "nl":"https://i.imgur.com/fC8eIvR.png",
+    "de":"https://i.imgur.com/vUgY11U.png",
+    "fr":"https://i.imgur.com/CoLWbjf.png",
+    "it":"https://i.imgur.com/va1X4j6.png",
+    "com":"https://i.imgur.com/D6vwN9n.png",
+    "com.tr":"https://i.imgur.com/wtiow4R.png",
+    "fi":"https://i.imgur.com/BpQCpVi.png"
+    }
+    bandera = bandera_dict[str(hotel)]
 
 
 
@@ -384,8 +418,8 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
 
     
         embed.set_thumbnail(url="https://www.habbo.es/habbo-imaging/avatarimage?user=" + Habbokeko + "&&headonly=1&size=b&gesture=sml&head_direction=4&action=std")
-        embed.set_author(name="Habbo [ES]", icon_url="https://i.imgur.com/0UDuO3n.png")
-        embed.set_footer(text="habbo[ES]", icon_url="https://i.imgur.com/6ePWlHz.png")
+        embed.set_author(name=f"Habbo [{hotel.upper()}]", icon_url=f"{bandera}")
+        embed.set_footer(text=f"habbo[{hotel.upper()}]", icon_url="https://i.imgur.com/6ePWlHz.png")
         await ctx.send(embed=embed)
        
 
