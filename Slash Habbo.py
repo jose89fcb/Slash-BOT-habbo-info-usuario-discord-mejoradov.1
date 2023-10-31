@@ -218,9 +218,50 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
     except AttributeError:
         r=""
 
+    tiempo = ""
     try:
+        if r.years != 0:
+            if r.years == 1:
+               tiempo += f"{r.years} Año "
+            else:
+               tiempo += f"{r.years} Años "
 
-     tiempo = f"{r.years} Años {r.days} Días {r.hours} Horas {r.months} Meses {r.minutes} Minutos {r.seconds} Segundos"
+            if r.days != 0:
+                if r.days == 1:
+                   tiempo += f"{r.days} Día "
+                else:
+                   tiempo += f"{r.days} Días "
+        elif r.days != 0:
+            if r.days == 1:
+               tiempo += f"{r.days} Día "
+            else:
+               tiempo += f"{r.days} Días "
+    
+        if r.hours != 0:
+            if r.hours == 1:
+               tiempo += f"{r.hours} Hora "
+            else:
+               tiempo += f"{r.hours} Horas "
+    
+        if r.months != 0:
+            if r.months == 1:
+               tiempo += f"{r.months} Mes "
+            else:
+               tiempo += f"{r.months} Meses "
+    
+        if r.minutes != 0:
+            if r.minutes == 1:
+               tiempo += f"{r.minutes} Minuto "
+            else:
+               tiempo += f"{r.minutes} Minutos "
+    
+        if r.seconds != 0:
+            if r.seconds == 1:
+               tiempo += f"{r.seconds} Segundo "
+            else:
+               tiempo += f"{r.seconds} Segundos "
+
+     #tiempo = f"{r.years} Años {r.days} Días {r.hours} Horas {r.months} Meses {r.minutes} Minutos {r.seconds} Segundos"
     except AttributeError:
         tiempo=""
         r=""
@@ -364,9 +405,51 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
     except AttributeError:
         r=" "
 
+    tiempotrans = ""
     try:
+        if r.years != 0:
+            if r.years == 1:
+               tiempotrans += f"{r.years} Año "
+            else:
+               tiempotrans += f"{r.years} Años "
 
-     tiempotrans = f"{r.years} Años {r.days} Días {r.hours} Horas {r.months} Meses {r.minutes} Minutos {r.seconds} Segundos"  
+            if r.days != 0:
+                if r.days == 1:
+                   tiempotrans += f"{r.days} Día "
+                else:
+                   tiempotrans += f"{r.days} Días "
+        elif r.days != 0:
+            if r.days == 1:
+               tiempotrans += f"{r.days} Día "
+            else:
+               tiempotrans += f"{r.days} Días "
+    
+        if r.hours != 0:
+            if r.hours == 1:
+               tiempotrans += f"{r.hours} Hora "
+            else:
+               tiempotrans += f"{r.hours} Horas "
+    
+        if r.months != 0:
+            if r.months == 1:
+               tiempotrans += f"{r.months} Mes "
+            else:
+               tiempotrans += f"{r.months} Meses "
+    
+        if r.minutes != 0:
+            if r.minutes == 1:
+               tiempotrans += f"{r.minutes} Minuto "
+            else:
+               tiempotrans += f"{r.minutes} Minutos "
+    
+        if r.seconds != 0:
+            if r.seconds == 1:
+               tiempotrans += f"{r.seconds} Segundo "
+            else:
+               tiempotrans += f"{r.seconds} Segundos "
+
+
+     #tiempotrans = f"{r.years} Años {r.days} Días {r.hours} Horas {r.months} Meses {r.minutes} Minutos {r.seconds} Segundos"  
     except AttributeError:
         tiempotrans="No muestra!❌"
     
