@@ -500,7 +500,7 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
 
 
     
-        embed.set_thumbnail(url="https://www.habbo.es/habbo-imaging/avatarimage?user=" + Habbokeko + "&&headonly=1&size=b&gesture=sml&head_direction=4&action=std")
+        embed.set_thumbnail(url="https://www.habbo.es/habbo-imaging/avatarimage?user=" + Habbokeko + "&headonly=1&size=b&gesture=sml&head_direction=4&action=std")
         embed.set_author(name=f"Habbo [{hotel.upper()}]", icon_url=f"{bandera}")
         embed.set_footer(text=f"habbo[{hotel.upper()}]", icon_url="https://i.imgur.com/6ePWlHz.png")
         await ctx.send(embed=embed)
@@ -508,7 +508,7 @@ async def _habboinfo(ctx:SlashContext, keko:str, hotel:str):
 
         embed=discord.Embed(title=f"ID del keko {Habbokeko}")
         embed.add_field(name=f"ID => {id}", value="\n\nAquí se guardaran las ID's de los usuarios de habbo Hotel\n\n¿Para qué sirve?\n\nPor si él usuario cambia de nombre con el ID podras visualizar el nombre", inline=False)
-        embed.set_thumbnail(url="https://www.habbo.es/habbo-imaging/avatarimage?user=" + Habbokeko + "&&headonly=1&size=b&gesture=sml&head_direction=4&action=std")
+        embed.set_thumbnail(url="https://www.habbo.es/habbo-imaging/avatarimage?user=" + Habbokeko + "&headonly=1&size=b&gesture=sml&head_direction=4&action=std")
         await ctx.author.send(embed=embed)
 
 
